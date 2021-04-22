@@ -139,7 +139,7 @@ public class MyExGUI {
 
         for(int i = 0;i < 5;i++)
         {
-            JLBQuestions[i] = new JLabel("点击开始做题显示题目");
+            JLBQuestions[i] = new JLabel("点击开始做题");
             JLBQuestions[i].setFont(JLBFont);
             JTFUsersAnswer[i] = new JTextField(5);                      //一定要加这行 不然会出现空指针错误
             JTFUsersAnswer[i].setFont(JTFFont);
@@ -177,7 +177,7 @@ public class MyExGUI {
 
         for(int i = 5;i < 10;i++)
         {
-            JLBQuestions[i] = new JLabel("点击开始做题显示题目");
+            JLBQuestions[i] = new JLabel("点击开始做题");
             JLBQuestions[i].setFont(JLBFont);
             JTFUsersAnswer[i] = new JTextField(5);                      //一定要加这行 不然会出现空指针错误
             JTFUsersAnswer[i].setFont(JTFFont);

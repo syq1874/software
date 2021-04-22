@@ -7,33 +7,32 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Random;
 
-
 public class Multiplication2 extends Operation {
 
-    static String ch = "+";
-    static String ch1 = "-";
-    static String ch2 = "×";
-    static String ch3 = "÷";
+	static String ch = "+";
+	static String ch1 = "-";
+	static String ch2 = "×";
+	static String ch3 = "÷";
 
-    public Multiplication2(int n) {
-        super(ch,ch1,ch2,ch3,n);
-    }
+	public Multiplication2(int n) {
+		super(ch, ch1, ch2, ch3, n);
+	}
 
-    @Override
-    public void operation() {
-       
-    }
+	@Override
+	public void operation() {
 
-    @Override
-    public void isNumRight() {}
+	}
 
-    public void setRange(){
-        minRange = 0;
-        maxRange = maxInt * maxInt;
-    }
-    
-    
-    public String printQuestion() {
+	@Override
+	public void isNumRight() {
+	}
+
+	public void setRange() {
+		minRange = 0;
+		maxRange = maxInt * maxInt;
+	}
+
+	public String printQuestion() {
 		isNumRight();
 
 		Random r = new Random();
@@ -42,11 +41,11 @@ public class Multiplication2 extends Operation {
 			op1 = (int) (Math.random() * Math.pow(10, n));
 			op2 = (int) (Math.random() * Math.pow(10, n));
 			op3 = (int) (Math.random() * Math.pow(10, n));
-			int a = r.nextInt(4);	//0+,1-,2*,3/
-			int b = r.nextInt(4);	//0+,1-,2*,3/
-			int c = r.nextInt(3); 	// c=0：没有括号，c=1：括号1,2位，c=2：括号2,3位
+			int a = r.nextInt(4); // 0+,1-,2*,3/
+			int b = r.nextInt(4); // 0+,1-,2*,3/
+			int c = r.nextInt(7); // c=0：没有括号，c=1：括号1,2位，c=2：括号2,3位
 			if (a == 0) {
-				if (c == 1) {
+				if (c == 1 || c == 2 || c == 3) {
 					if (b == 0) {
 						correctAnswer = op1 + op2 + op3;
 						p = op1 + ch + op2 + ch + op3 + " =";
@@ -78,7 +77,7 @@ public class Multiplication2 extends Operation {
 					}
 				}
 			} else if (a == 1) {
-				if (c == 1) {
+				if (c == 1 || c == 2 || c == 3) {
 					if (b == 0) {
 						correctAnswer = op1 - op2 + op3;
 						p = op1 + ch1 + op2 + ch + op3 + " =";
@@ -110,7 +109,7 @@ public class Multiplication2 extends Operation {
 					}
 				}
 			} else if (a == 2) {
-				if (c == 2) {
+				if (c == 4 || c == 5 || c == 6) {
 					if (b == 0) {
 						correctAnswer = op1 * (op2 + op3);
 						p = op1 + ch2 + "(" + op2 + ch + op3 + ")" + " =";
@@ -142,7 +141,7 @@ public class Multiplication2 extends Operation {
 					}
 				}
 			} else if (a == 3) {
-				if (c == 2) {
+				if (c == 4 || c == 5 || c == 6) {
 					if (b == 0) {
 						op2 += 1;
 						correctAnswer = op1 / (op2 + op3);
