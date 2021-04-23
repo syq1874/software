@@ -43,9 +43,9 @@ public class Multiplication2 extends Operation {
 			op3 = (int) (Math.random() * Math.pow(10, n));
 			int a = r.nextInt(4); // 0+,1-,2*,3/
 			int b = r.nextInt(4); // 0+,1-,2*,3/
-			int c = r.nextInt(7); // c=0：没有括号，c=1：括号1,2位，c=2：括号2,3位
+			int c = r.nextInt(3); // c=0：没有括号，c=1：括号1,2位，c=2：括号2,3位
 			if (a == 0) {
-				if (c == 1 || c == 2 || c == 3) {
+				if (c == 1) {
 					if (b == 0) {
 						correctAnswer = op1 + op2 + op3;
 						p = op1 + ch + op2 + ch + op3 + " =";
@@ -77,7 +77,7 @@ public class Multiplication2 extends Operation {
 					}
 				}
 			} else if (a == 1) {
-				if (c == 1 || c == 2 || c == 3) {
+				if (c == 1) {
 					if (b == 0) {
 						correctAnswer = op1 - op2 + op3;
 						p = op1 + ch1 + op2 + ch + op3 + " =";
@@ -109,7 +109,7 @@ public class Multiplication2 extends Operation {
 					}
 				}
 			} else if (a == 2) {
-				if (c == 4 || c == 5 || c == 6) {
+				if (c == 2) {
 					if (b == 0) {
 						correctAnswer = op1 * (op2 + op3);
 						p = op1 + ch2 + "(" + op2 + ch + op3 + ")" + " =";
@@ -141,7 +141,7 @@ public class Multiplication2 extends Operation {
 					}
 				}
 			} else if (a == 3) {
-				if (c == 4 || c == 5 || c == 6) {
+				if (c == 2) {
 					if (b == 0) {
 						op2 += 1;
 						correctAnswer = op1 / (op2 + op3);
