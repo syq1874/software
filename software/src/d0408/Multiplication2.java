@@ -41,6 +41,7 @@ public class Multiplication2 extends Operation {
 			op1 = (int) (Math.random() * Math.pow(10, n));
 			op2 = (int) (Math.random() * Math.pow(10, n));
 			op3 = (int) (Math.random() * Math.pow(10, n));
+			
 			int a = r.nextInt(4); // 0+,1-,2*,3/
 			int b = r.nextInt(4); // 0+,1-,2*,3/
 			int c = r.nextInt(3); // c=0：没有括号，c=1：括号1,2位，c=2：括号2,3位
